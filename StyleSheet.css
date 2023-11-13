@@ -1,0 +1,1791 @@
+.card {
+    perspective: 1000px;
+    position: relative;
+    margin-bottom: 100%;
+  }
+
+  .card-inner {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    transform: rotateY(0deg);
+  }
+
+  .card.is-flipped .card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .card-front,
+  .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+  }
+
+  .card-back {
+    transform: rotateY(180deg);
+    display: none;
+  }
+
+  .card.is-flipped .card-back {
+    display: block;
+  }
+
+html {
+    box-sizing: border-box
+}
+
+*,*:before,*:after {
+    box-sizing: inherit
+}
+
+/* Extract from normalize.css by Nicolas Gallagher and Jonathan Neal git.io/normalize */
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%
+}
+
+body {
+    margin: 0
+}
+
+article,aside,details,figcaption,figure,footer,header,main,menu,nav,section {
+    display: block
+}
+
+summary {
+    display: list-item
+}
+
+audio,canvas,progress,video {
+    display: inline-block
+}
+
+progress {
+    vertical-align: baseline
+}
+
+audio:not([controls]) {
+    display: none;
+    height: 0
+}
+
+[hidden],template {
+    display: none
+}
+
+a {
+    background-color: transparent
+}
+
+a:active,a:hover {
+    outline-width: 0
+}
+
+abbr[title] {
+    border-bottom: none;
+    text-decoration: underline;
+    text-decoration: underline dotted
+}
+
+b,strong {
+    font-weight: bolder
+}
+
+dfn {
+    font-style: italic
+}
+
+mark {
+    background: #ff0;
+    color: #000
+}
+
+small {
+    font-size: 80%
+}
+
+sub,sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline
+}
+
+sub {
+    bottom: -0.25em
+}
+
+sup {
+    top: -0.5em
+}
+
+figure {
+    margin: 1em 40px
+}
+
+img {
+    border-style: none
+}
+
+code,kbd,pre,samp {
+    font-family: monospace,monospace;
+    font-size: 1em
+}
+
+hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible
+}
+
+button,input,select,textarea,optgroup {
+    font: inherit;
+    margin: 0
+}
+
+optgroup {
+    font-weight: bold
+}
+
+button,input {
+    overflow: visible
+}
+
+button,select {
+    text-transform: none
+}
+
+button,[type=button],[type=reset],[type=submit] {
+    -webkit-appearance: button
+}
+
+button::-moz-focus-inner,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner {
+    border-style: none;
+    padding: 0
+}
+
+button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring {
+    outline: 1px dotted ButtonText
+}
+
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: .35em .625em .75em
+}
+
+legend {
+    color: inherit;
+    display: table;
+    max-width: 100%;
+    padding: 0;
+    white-space: normal
+}
+
+textarea {
+    overflow: auto
+}
+
+[type=checkbox],[type=radio] {
+    padding: 0
+}
+
+[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button {
+    height: auto
+}
+
+[type=search] {
+    -webkit-appearance: textfield;
+    outline-offset: -2px
+}
+
+[type=search]::-webkit-search-decoration {
+    -webkit-appearance: none
+}
+
+::-webkit-file-upload-button {
+    -webkit-appearance: button;
+    font: inherit
+}
+
+/* End extract */
+html,body {
+    font-family: Verdana,sans-serif;
+    font-size: 15px;
+    line-height: 1.5
+}
+
+html {
+    overflow-x: hidden
+}
+
+h1 {
+    font-size: 36px
+}
+
+h2 {
+    font-size: 30px
+}
+
+h3 {
+    font-size: 24px
+}
+
+h4 {
+    font-size: 20px
+}
+
+h5 {
+    font-size: 18px
+}
+
+h6 {
+    font-size: 16px
+}
+
+.daw-serif {
+    font-family: serif
+}
+
+.daw-sans-serif {
+    font-family: sans-serif
+}
+
+.daw-cursive {
+    font-family: cursive
+}
+
+.daw-monospace {
+    font-family: monospace
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: "Segoe UI",Arial,sans-serif;
+    font-weight: 400;
+    margin: 10px 0
+}
+
+.daw-wide {
+    letter-spacing: 4px
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 20px 0
+}
+
+.daw-image {
+    max-width: 100%;
+    height: auto
+}
+
+img {
+    vertical-align: middle
+}
+
+a {
+    color: inherit
+}
+
+.daw-table,.daw-table-all {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    display: table
+}
+
+.daw-table-all {
+    border: 1px solid #ccc
+}
+
+.daw-bordered tr,.daw-table-all tr {
+    border-bottom: 1px solid #ddd
+}
+
+.daw-striped tbody tr:nth-child(even) {
+    background-color: #f1f1f1
+}
+
+.daw-table-all tr:nth-child(odd) {
+    background-color: #fff
+}
+
+.daw-table-all tr:nth-child(even) {
+    background-color: #f1f1f1
+}
+
+.daw-hoverable tbody tr:hover,.daw-ul.daw-hoverable li:hover {
+    background-color: #ccc
+}
+
+.daw-centered tr th,.daw-centered tr td {
+    text-align: center
+}
+
+.daw-table td,.daw-table th,.daw-table-all td,.daw-table-all th {
+    padding: 8px 8px;
+    display: table-cell;
+    text-align: left;
+    vertical-align: top
+}
+
+.daw-table th:first-child,.daw-table td:first-child,.daw-table-all th:first-child,.daw-table-all td:first-child {
+    padding-left: 16px
+}
+
+.daw-btn,.daw-button {
+    border: none;
+    display: inline-block;
+    padding: 8px 16px;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    background-color: inherit;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap
+}
+
+.daw-btn:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)
+}
+
+.daw-btn,.daw-button {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+.daw-disabled,.daw-btn:disabled,.daw-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.3
+}
+
+.daw-disabled *,:disabled * {
+    pointer-events: none
+}
+
+.daw-btn.daw-disabled:hover,.daw-btn:disabled:hover {
+    box-shadow: none
+}
+
+.daw-badge,.daw-tag {
+    background-color: #000;
+    color: #fff;
+    display: inline-block;
+    padding-left: 8px;
+    padding-right: 8px;
+    text-align: center
+}
+
+.daw-badge {
+    border-radius: 50%
+}
+
+.daw-ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0
+}
+
+.daw-ul li {
+    padding: 8px 16px;
+    border-bottom: 1px solid #ddd
+}
+
+.daw-ul li:last-child {
+    border-bottom: none
+}
+
+.daw-tooltip,.daw-display-container {
+    position: relative
+}
+
+.daw-tooltip .daw-text {
+    display: none
+}
+
+.daw-tooltip:hover .daw-text {
+    display: inline-block
+}
+
+.daw-ripple:active {
+    opacity: 0.5
+}
+
+.daw-ripple {
+    transition: opacity 0s
+}
+
+.daw-input {
+    padding: 8px;
+    display: block;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    width: 100%
+}
+
+.daw-select {
+    padding: 9px 0;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #ccc
+}
+
+.daw-dropdown-click,.daw-dropdown-hover {
+    position: relative;
+    display: inline-block;
+    cursor: pointer
+}
+
+.daw-dropdown-hover:hover .daw-dropdown-content {
+    display: block
+}
+
+.daw-dropdown-hover:first-child,.daw-dropdown-click:hover {
+    background-color: #ccc;
+    color: #000
+}
+
+.daw-dropdown-hover:hover > .daw-button:first-child,.daw-dropdown-click:hover > .daw-button:first-child {
+    background-color: #ccc;
+    color: #000
+}
+
+.daw-dropdown-content {
+    cursor: auto;
+    color: #000;
+    background-color: #fff;
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    margin: 0;
+    padding: 0;
+    z-index: 1
+}
+
+.daw-check,.daw-radio {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    top: 6px
+}
+
+.daw-sidebar {
+    height: 100%;
+    width: 200px;
+    background-color: #fff;
+    position: fixed!important;
+    z-index: 1;
+    overflow: auto
+}
+
+.daw-bar-block .daw-dropdown-hover,.daw-bar-block .daw-dropdown-click {
+    width: 100%
+}
+
+.daw-bar-block .daw-dropdown-hover .daw-dropdown-content,.daw-bar-block .daw-dropdown-click .daw-dropdown-content {
+    min-width: 100%
+}
+
+.daw-bar-block .daw-dropdown-hover .daw-button,.daw-bar-block .daw-dropdown-click .daw-button {
+    width: 100%;
+    text-align: left;
+    padding: 8px 16px
+}
+
+.daw-main,#main {
+    transition: margin-left .4s
+}
+
+.daw-modal {
+    z-index: 3;
+    display: none;
+    padding-top: 100px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4)
+}
+
+.daw-modal-content {
+    margin: auto;
+    background-color: #fff;
+    position: relative;
+    padding: 0;
+    outline: 0;
+    width: 600px
+}
+
+.daw-bar {
+    width: 100%;
+    overflow: hidden
+}
+
+.daw-center .daw-bar {
+    display: inline-block;
+    width: auto
+}
+
+.daw-bar .daw-bar-item {
+    padding: 8px 16px;
+    float: left;
+    width: auto;
+    border: none;
+    display: block;
+    outline: 0
+}
+
+.daw-bar .daw-dropdown-hover,.daw-bar .daw-dropdown-click {
+    position: static;
+    float: left
+}
+
+.daw-bar .daw-button {
+    white-space: normal
+}
+
+.daw-bar-block .daw-bar-item {
+    width: 100%;
+    display: block;
+    padding: 8px 16px;
+    text-align: left;
+    border: none;
+    white-space: normal;
+    float: none;
+    outline: 0
+}
+
+.daw-bar-block.daw-center .daw-bar-item {
+    text-align: center
+}
+
+.daw-block {
+    display: block;
+    width: 100%
+}
+
+.daw-responsive {
+    display: block;
+    overflow-x: auto
+}
+
+.daw-container:after,.daw-container:before,.daw-panel:after,.daw-panel:before,.daw-row:after,.daw-row:before,.daw-row-padding:after,.daw-row-padding:before, .daw-cell-row:before,.daw-cell-row:after,.daw-clear:after,.daw-clear:before,.daw-bar:before,.daw-bar:after {
+    content: "";
+    display: table;
+    clear: both
+}
+
+.daw-col,.daw-half,.daw-third,.daw-twothird,.daw-threequarter,.daw-quarter {
+    float: left;
+    width: 100%
+}
+
+.daw-col.s1 {
+    width: 8.33333%
+}
+
+.daw-col.s2 {
+    width: 16.66666%
+}
+
+.daw-col.s3 {
+    width: 24.99999%
+}
+
+.daw-col.s4 {
+    width: 33.33333%
+}
+
+.daw-col.s5 {
+    width: 41.66666%
+}
+
+.daw-col.s6 {
+    width: 49.99999%
+}
+
+.daw-col.s7 {
+    width: 58.33333%
+}
+
+.daw-col.s8 {
+    width: 66.66666%
+}
+
+.daw-col.s9 {
+    width: 74.99999%
+}
+
+.daw-col.s10 {
+    width: 83.33333%
+}
+
+.daw-col.s11 {
+    width: 91.66666%
+}
+
+.daw-col.s12 {
+    width: 99.99999%
+}
+
+@media (min-width: 601px) {
+    .daw-col.m1 {
+        width:8.33333%
+    }
+
+    .daw-col.m2 {
+        width: 16.66666%
+    }
+
+    .daw-col.m3,.daw-quarter {
+        width: 24.99999%
+    }
+
+    .daw-col.m4,.daw-third {
+        width: 33.33333%
+    }
+
+    .daw-col.m5 {
+        width: 41.66666%
+    }
+
+    .daw-col.m6,.daw-half {
+        width: 49.99999%
+    }
+
+    .daw-col.m7 {
+        width: 58.33333%
+    }
+
+    .daw-col.m8,.daw-twothird {
+        width: 66.66666%
+    }
+
+    .daw-col.m9,.daw-threequarter {
+        width: 74.99999%
+    }
+
+    .daw-col.m10 {
+        width: 83.33333%
+    }
+
+    .daw-col.m11 {
+        width: 91.66666%
+    }
+
+    .daw-col.m12 {
+        width: 99.99999%
+    }
+}
+
+@media (min-width: 993px) {
+    .daw-col.l1 {
+        width:8.33333%
+    }
+
+    .daw-col.l2 {
+        width: 16.66666%
+    }
+
+    .daw-col.l3 {
+        width: 24.99999%
+    }
+
+    .daw-col.l4 {
+        width: 33.33333%
+    }
+
+    .daw-col.l5 {
+        width: 41.66666%
+    }
+
+    .daw-col.l6 {
+        width: 49.99999%
+    }
+
+    .daw-col.l7 {
+        width: 58.33333%
+    }
+
+    .daw-col.l8 {
+        width: 66.66666%
+    }
+
+    .daw-col.l9 {
+        width: 74.99999%
+    }
+
+    .daw-col.l10 {
+        width: 83.33333%
+    }
+
+    .daw-col.l11 {
+        width: 91.66666%
+    }
+
+    .daw-col.l12 {
+        width: 99.99999%
+    }
+}
+
+.daw-rest {
+    overflow: hidden
+}
+
+.daw-stretch {
+    margin-left: -16px;
+    margin-right: -16px
+}
+
+.daw-content,.daw-auto {
+    margin-left: auto;
+    margin-right: auto
+}
+
+.daw-content {
+    max-width: 980px
+}
+
+.daw-auto {
+    max-width: 1140px
+}
+
+.daw-cell-row {
+    display: table;
+    width: 100%
+}
+
+.daw-cell {
+    display: table-cell
+}
+
+.daw-cell-top {
+    vertical-align: top
+}
+
+.daw-cell-middle {
+    vertical-align: middle
+}
+
+.daw-cell-bottom {
+    vertical-align: bottom
+}
+
+.daw-hide {
+    display: none!important
+}
+
+.daw-show-block,.daw-show {
+    display: block!important
+}
+
+.daw-show-inline-block {
+    display: inline-block!important
+}
+
+@media (max-width: 1205px) {
+    .daw-auto {
+        max-width:95%
+    }
+}
+
+@media (max-width: 600px) {
+    .daw-modal-content {
+        margin:0 10px;
+        width: auto!important
+    }
+
+    .daw-modal {
+        padding-top: 30px
+    }
+
+    .daw-dropdown-hover.daw-mobile .daw-dropdown-content,.daw-dropdown-click.daw-mobile .daw-dropdown-content {
+        position: relative
+    }
+
+    .daw-hide-small {
+        display: none!important
+    }
+
+    .daw-mobile {
+        display: block;
+        width: 100%!important
+    }
+
+    .daw-bar-item.daw-mobile,.daw-dropdown-hover.daw-mobile,.daw-dropdown-click.daw-mobile {
+        text-align: center
+    }
+
+    .daw-dropdown-hover.daw-mobile,.daw-dropdown-hover.daw-mobile .daw-btn,.daw-dropdown-hover.daw-mobile .daw-button,.daw-dropdown-click.daw-mobile,.daw-dropdown-click.daw-mobile .daw-btn,.daw-dropdown-click.daw-mobile .daw-button {
+        width: 100%
+    }
+}
+
+@media (max-width: 768px) {
+    .daw-modal-content {
+        width:500px
+    }
+
+    .daw-modal {
+        padding-top: 50px
+    }
+}
+
+@media (min-width: 993px) {
+    .daw-modal-content {
+        width:900px
+    }
+
+    .daw-hide-large {
+        display: none!important
+    }
+
+    .daw-sidebar.daw-collapse {
+        display: block!important
+    }
+}
+
+@media (max-width: 992px) and (min-width:601px) {
+    .daw-hide-medium {
+        display:none!important
+    }
+}
+
+@media (max-width: 992px) {
+    .daw-sidebar.daw-collapse {
+        display:none
+    }
+
+    .daw-main {
+        margin-left: 0!important;
+        margin-right: 0!important
+    }
+
+    .daw-auto {
+        max-width: 100%
+    }
+}
+
+.daw-top,.daw-bottom {
+    position: fixed;
+    width: 100%;
+    z-index: 1
+}
+
+.daw-top {
+    top: 0
+}
+
+.daw-bottom {
+    bottom: 0
+}
+
+.daw-overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2
+}
+
+.daw-display-topleft {
+    position: absolute;
+    left: 0;
+    top: 0
+}
+
+.daw-display-topright {
+    position: absolute;
+    right: 0;
+    top: 0
+}
+
+.daw-display-bottomleft {
+    position: absolute;
+    left: 0;
+    bottom: 0
+}
+
+.daw-display-bottomright {
+    position: absolute;
+    right: 0;
+    bottom: 0
+}
+
+.daw-display-middle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%)
+}
+
+.daw-display-left {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translate(0%,-50%);
+    -ms-transform: translate(-0%,-50%)
+}
+
+.daw-display-right {
+    position: absolute;
+    top: 50%;
+    right: 0%;
+    transform: translate(0%,-50%);
+    -ms-transform: translate(0%,-50%)
+}
+
+.daw-display-topmiddle {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%,0%);
+    -ms-transform: translate(-50%,0%)
+}
+
+.daw-display-bottommiddle {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%,0%);
+    -ms-transform: translate(-50%,0%)
+}
+
+.daw-display-container:hover .daw-display-hover {
+    display: block
+}
+
+.daw-display-container:hover span.daw-display-hover {
+    display: inline-block
+}
+
+.daw-display-hover {
+    display: none
+}
+
+.daw-display-position {
+    position: absolute
+}
+
+.daw-circle {
+    border-radius: 50%
+}
+
+.daw-round-small {
+    border-radius: 2px
+}
+
+.daw-round,.daw-round-medium {
+    border-radius: 4px
+}
+
+.daw-round-large {
+    border-radius: 8px
+}
+
+.daw-round-xlarge {
+    border-radius: 16px
+}
+
+.daw-round-xxlarge {
+    border-radius: 32px
+}
+
+.daw-row-padding,.daw-row-padding>.daw-half,.daw-row-padding>.daw-third,.daw-row-padding>.daw-twothird,.daw-row-padding>.daw-threequarter,.daw-row-padding>.daw-quarter,.daw-row-padding>.daw-col {
+    padding: 0 8px
+}
+
+.daw-container,.daw-panel {
+    padding: 0.01em 16px
+}
+
+.daw-panel {
+    margin-top: 16px;
+    margin-bottom: 16px
+}
+
+.daw-code,.daw-codespan {
+    font-family: Consolas,"courier new";
+    font-size: 16px
+}
+
+.daw-code {
+    width: auto;
+    background-color: #fff;
+    padding: 8px 12px;
+    border-left: 4px solid #4CAF50;
+    word-wrap: break-word
+}
+
+.daw-codespan {
+    color: crimson;
+    background-color: #f1f1f1;
+    padding-left: 4px;
+    padding-right: 4px;
+    font-size: 110%
+}
+
+.daw-card,.daw-card-2 {
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)
+}
+
+.daw-card-4,.daw-hover-shadow:hover {
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19)
+}
+
+.daw-spin {
+    animation: daw-spin 2s infinite linear
+}
+
+@keyframes daw-spin {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    100% {
+        transform: rotate(359deg)
+    }
+}
+
+.daw-animate-fading {
+    animation: fading 10s infinite
+}
+
+@keyframes fading {
+    0% {
+        opacity: 0
+    }
+
+    50% {
+        opacity: 1
+    }
+
+    100% {
+        opacity: 0
+    }
+}
+
+.daw-animate-opacity {
+    animation: opac 0.8s
+}
+
+@keyframes opac {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+.daw-animate-top {
+    position: relative;
+    animation: animatetop 0.4s
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+.daw-animate-left {
+    position: relative;
+    animation: animateleft 0.4s
+}
+
+@keyframes animateleft {
+    from {
+        left: -300px;
+        opacity: 0
+    }
+
+    to {
+        left: 0;
+        opacity: 1
+    }
+}
+
+.daw-animate-right {
+    position: relative;
+    animation: animateright 0.4s
+}
+
+@keyframes animateright {
+    from {
+        right: -300px;
+        opacity: 0
+    }
+
+    to {
+        right: 0;
+        opacity: 1
+    }
+}
+
+.daw-animate-bottom {
+    position: relative;
+    animation: animatebottom 0.4s
+}
+
+@keyframes animatebottom {
+    from {
+        bottom: -300px;
+        opacity: 0
+    }
+
+    to {
+        bottom: 0;
+        opacity: 1
+    }
+}
+
+.daw-animate-zoom {
+    animation: animatezoom 0.6s
+}
+
+@keyframes animatezoom {
+    from {
+        transform: scale(0)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+.daw-animate-input {
+    transition: width 0.4s ease-in-out
+}
+
+.daw-animate-input:focus {
+    width: 100%!important
+}
+
+.daw-opacity,.daw-hover-opacity:hover {
+    opacity: 0.60
+}
+
+.daw-opacity-off,.daw-hover-opacity-off:hover {
+    opacity: 1
+}
+
+.daw-opacity-max {
+    opacity: 0.25
+}
+
+.daw-opacity-min {
+    opacity: 0.75
+}
+
+.daw-greyscale-max,.daw-grayscale-max,.daw-hover-greyscale:hover,.daw-hover-grayscale:hover {
+    filter: grayscale(100%)
+}
+
+.daw-greyscale,.daw-grayscale {
+    filter: grayscale(75%)
+}
+
+.daw-greyscale-min,.daw-grayscale-min {
+    filter: grayscale(50%)
+}
+
+.daw-sepia {
+    filter: sepia(75%)
+}
+
+.daw-sepia-max,.daw-hover-sepia:hover {
+    filter: sepia(100%)
+}
+
+.daw-sepia-min {
+    filter: sepia(50%)
+}
+
+.daw-tiny {
+    font-size: 10px!important
+}
+
+.daw-small {
+    font-size: 12px!important
+}
+
+.daw-medium {
+    font-size: 15px!important
+}
+
+.daw-large {
+    font-size: 18px!important
+}
+
+.daw-xlarge {
+    font-size: 24px!important
+}
+
+.daw-xxlarge {
+    font-size: 36px!important
+}
+
+.daw-xxxlarge {
+    font-size: 48px!important
+}
+
+.daw-jumbo {
+    font-size: 64px!important
+}
+
+.daw-left-align {
+    text-align: left!important
+}
+
+.daw-right-align {
+    text-align: right!important
+}
+
+.daw-justify {
+    text-align: justify!important
+}
+
+.daw-center {
+    text-align: center!important
+}
+
+.daw-border-0 {
+    border: 0!important
+}
+
+.daw-border {
+    border: 1px solid #ccc!important
+}
+
+.daw-border-top {
+    border-top: 1px solid #ccc!important
+}
+
+.daw-border-bottom {
+    border-bottom: 1px solid #ccc!important
+}
+
+.daw-border-left {
+    border-left: 1px solid #ccc!important
+}
+
+.daw-border-right {
+    border-right: 1px solid #ccc!important
+}
+
+.daw-topbar {
+    border-top: 6px solid #ccc!important
+}
+
+.daw-bottombar {
+    border-bottom: 6px solid #ccc!important
+}
+
+.daw-leftbar {
+    border-left: 6px solid #ccc!important
+}
+
+.daw-rightbar {
+    border-right: 6px solid #ccc!important
+}
+
+.daw-section,.daw-code {
+    margin-top: 16px!important;
+    margin-bottom: 16px!important
+}
+
+.daw-margin {
+    margin: 16px!important
+}
+
+.daw-margin-top {
+    margin-top: 16px!important
+}
+
+.daw-margin-bottom {
+    margin-bottom: 16px!important
+}
+
+.daw-margin-left {
+    margin-left: 16px!important
+}
+
+.daw-margin-right {
+    margin-right: 16px!important
+}
+
+.daw-padding-small {
+    padding: 4px 8px!important
+}
+
+.daw-padding {
+    padding: 8px 16px!important
+}
+
+.daw-padding-large {
+    padding: 12px 24px!important
+}
+
+.daw-padding-16 {
+    padding-top: 16px!important;
+    padding-bottom: 16px!important
+}
+
+.daw-padding-24 {
+    padding-top: 24px!important;
+    padding-bottom: 24px!important
+}
+
+.daw-padding-32 {
+    padding-top: 32px!important;
+    padding-bottom: 32px!important
+}
+
+.daw-padding-48 {
+    padding-top: 48px!important;
+    padding-bottom: 48px!important
+}
+
+.daw-padding-64 {
+    padding-top: 64px!important;
+    padding-bottom: 64px!important
+}
+
+.daw-padding-top-64 {
+    padding-top: 64px!important
+}
+
+.daw-padding-top-48 {
+    padding-top: 48px!important
+}
+
+.daw-padding-top-32 {
+    padding-top: 32px!important
+}
+
+.daw-padding-top-24 {
+    padding-top: 24px!important
+}
+
+.daw-left {
+    float: left!important
+}
+
+.daw-right {
+    float: right!important
+}
+
+.daw-button:hover {
+    color: #000!important;
+    background-color: #ccc!important
+}
+
+.daw-transparent,.daw-hover-none:hover {
+    background-color: transparent!important
+}
+
+.daw-hover-none:hover {
+    box-shadow: none!important
+}
+
+/* Colors */
+.daw-amber,.daw-hover-amber:hover {
+    color: #000!important;
+    background-color: #ffc107!important
+}
+
+.daw-aqua,.daw-hover-aqua:hover {
+    color: #000!important;
+    background-color: #00ffff!important
+}
+
+.daw-blue,.daw-hover-blue:hover {
+    color: #fff!important;
+    background-color: #2196F3!important
+}
+
+.daw-light-blue,.daw-hover-light-blue:hover {
+    color: #000!important;
+    background-color: #87CEEB!important
+}
+
+.daw-brown,.daw-hover-brown:hover {
+    color: #fff!important;
+    background-color: #795548!important
+}
+
+.daw-cyan,.daw-hover-cyan:hover {
+    color: #000!important;
+    background-color: #00bcd4!important
+}
+
+.daw-blue-grey,.daw-hover-blue-grey:hover,.daw-blue-gray,.daw-hover-blue-gray:hover {
+    color: #fff!important;
+    background-color: #607d8b!important
+}
+
+.daw-green,.daw-hover-green:hover {
+    color: #fff!important;
+    background-color: #4CAF50!important
+}
+
+.daw-light-green,.daw-hover-light-green:hover {
+    color: #000!important;
+    background-color: #8bc34a!important
+}
+
+.daw-indigo,.daw-hover-indigo:hover {
+    color: #fff!important;
+    background-color: #3f51b5!important
+}
+
+.daw-khaki,.daw-hover-khaki:hover {
+    color: #000!important;
+    background-color: #f0e68c!important
+}
+
+.daw-lime,.daw-hover-lime:hover {
+    color: #000!important;
+    background-color: #cddc39!important
+}
+
+.daw-orange,.daw-hover-orange:hover {
+    color: #000!important;
+    background-color: #ff9800!important
+}
+
+.daw-deep-orange,.daw-hover-deep-orange:hover {
+    color: #fff!important;
+    background-color: #ff5722!important
+}
+
+.daw-pink,.daw-hover-pink:hover {
+    color: #fff!important;
+    background-color: #e91e63!important
+}
+
+.daw-purple,.daw-hover-purple:hover {
+    color: #fff!important;
+    background-color: #9c27b0!important
+}
+
+.daw-deep-purple,.daw-hover-deep-purple:hover {
+    color: #fff!important;
+    background-color: #673ab7!important
+}
+
+.daw-red,.daw-hover-red:hover {
+    color: #fff!important;
+    background-color: #f44336!important
+}
+
+.daw-sand,.daw-hover-sand:hover {
+    color: #000!important;
+    background-color: #fdf5e6!important
+}
+
+.daw-teal,.daw-hover-teal:hover {
+    color: #fff!important;
+    background-color: #009688!important
+}
+
+.daw-yellow,.daw-hover-yellow:hover {
+    color: #000!important;
+    background-color: #ffeb3b!important
+}
+
+.daw-white,.daw-hover-white:hover {
+    color: #000!important;
+    background-color: #0d864f!important
+}
+
+.daw-black,.daw-hover-black:hover {
+    color: #fff!important;
+    background-color: #000!important
+}
+
+.daw-grey,.daw-hover-grey:hover,.daw-gray,.daw-hover-gray:hover {
+    color: #000!important;
+    background-color: #9e9e9e!important
+}
+
+.daw-light-grey,.daw-hover-light-grey:hover,.daw-light-gray,.daw-hover-light-gray:hover {
+    color: #000!important;
+    background-color: #f1f1f1!important
+}
+
+.daw-dark-grey,.daw-hover-dark-grey:hover,.daw-dark-gray,.daw-hover-dark-gray:hover {
+    color: #fff!important;
+    background-color: #616161!important
+}
+
+.daw-pale-red,.daw-hover-pale-red:hover {
+    color: #000!important;
+    background-color: #ffdddd!important
+}
+
+.daw-pale-green,.daw-hover-pale-green:hover {
+    color: #000!important;
+    background-color: #ddffdd!important
+}
+
+.daw-pale-yellow,.daw-hover-pale-yellow:hover {
+    color: #000!important;
+    background-color: #ffffcc!important
+}
+
+.daw-pale-blue,.daw-hover-pale-blue:hover {
+    color: #000!important;
+    background-color: #ddffff!important
+}
+
+.daw-text-amber,.daw-hover-text-amber:hover {
+    color: #ffc107!important
+}
+
+.daw-text-aqua,.daw-hover-text-aqua:hover {
+    color: #00ffff!important
+}
+
+.daw-text-blue,.daw-hover-text-blue:hover {
+    color: #2196F3!important
+}
+
+.daw-text-light-blue,.daw-hover-text-light-blue:hover {
+    color: #87CEEB!important
+}
+
+.daw-text-brown,.daw-hover-text-brown:hover {
+    color: #795548!important
+}
+
+.daw-text-cyan,.daw-hover-text-cyan:hover {
+    color: #00bcd4!important
+}
+
+.daw-text-blue-grey,.daw-hover-text-blue-grey:hover,.daw-text-blue-gray,.daw-hover-text-blue-gray:hover {
+    color: #607d8b!important
+}
+
+.daw-text-green,.daw-hover-text-green:hover {
+    color: #4CAF50!important
+}
+
+.daw-text-light-green,.daw-hover-text-light-green:hover {
+    color: #8bc34a!important
+}
+
+.daw-text-indigo,.daw-hover-text-indigo:hover {
+    color: #3f51b5!important
+}
+
+.daw-text-khaki,.daw-hover-text-khaki:hover {
+    color: #b4aa50!important
+}
+
+.daw-text-lime,.daw-hover-text-lime:hover {
+    color: #cddc39!important
+}
+
+.daw-text-orange,.daw-hover-text-orange:hover {
+    color: #ff9800!important
+}
+
+.daw-text-deep-orange,.daw-hover-text-deep-orange:hover {
+    color: #ff5722!important
+}
+
+.daw-text-pink,.daw-hover-text-pink:hover {
+    color: #e91e63!important
+}
+
+.daw-text-purple,.daw-hover-text-purple:hover {
+    color: #9c27b0!important
+}
+
+.daw-text-deep-purple,.daw-hover-text-deep-purple:hover {
+    color: #673ab7!important
+}
+
+.daw-text-red,.daw-hover-text-red:hover {
+    color: #f44336!important
+}
+
+.daw-text-sand,.daw-hover-text-sand:hover {
+    color: #fdf5e6!important
+}
+
+.daw-text-teal,.daw-hover-text-teal:hover {
+    color: #009688!important
+}
+
+.daw-text-yellow,.daw-hover-text-yellow:hover {
+    color: #d2be0e!important
+}
+
+.daw-text-white,.daw-hover-text-white:hover {
+    color: #fff!important
+}
+
+.daw-text-black,.daw-hover-text-black:hover {
+    color: #000!important
+}
+
+.daw-text-grey,.daw-hover-text-grey:hover,.daw-text-gray,.daw-hover-text-gray:hover {
+    color: #757575!important
+}
+
+.daw-text-light-grey,.daw-hover-text-light-grey:hover,.daw-text-light-gray,.daw-hover-text-light-gray:hover {
+    color: #f1f1f1!important
+}
+
+.daw-text-dark-grey,.daw-hover-text-dark-grey:hover,.daw-text-dark-gray,.daw-hover-text-dark-gray:hover {
+    color: #3a3a3a!important
+}
+
+.daw-border-amber,.daw-hover-border-amber:hover {
+    border-color: #ffc107!important
+}
+
+.daw-border-aqua,.daw-hover-border-aqua:hover {
+    border-color: #00ffff!important
+}
+
+.daw-border-blue,.daw-hover-border-blue:hover {
+    border-color: #2196F3!important
+}
+
+.daw-border-light-blue,.daw-hover-border-light-blue:hover {
+    border-color: #87CEEB!important
+}
+
+.daw-border-brown,.daw-hover-border-brown:hover {
+    border-color: #795548!important
+}
+
+.daw-border-cyan,.daw-hover-border-cyan:hover {
+    border-color: #00bcd4!important
+}
+
+.daw-border-blue-grey,.daw-hover-border-blue-grey:hover,.daw-border-blue-gray,.daw-hover-border-blue-gray:hover {
+    border-color: #607d8b!important
+}
+
+.daw-border-green,.daw-hover-border-green:hover {
+    border-color: #4CAF50!important
+}
+
+.daw-border-light-green,.daw-hover-border-light-green:hover {
+    border-color: #8bc34a!important
+}
+
+.daw-border-indigo,.daw-hover-border-indigo:hover {
+    border-color: #3f51b5!important
+}
+
+.daw-border-khaki,.daw-hover-border-khaki:hover {
+    border-color: #f0e68c!important
+}
+
+.daw-border-lime,.daw-hover-border-lime:hover {
+    border-color: #cddc39!important
+}
+
+.daw-border-orange,.daw-hover-border-orange:hover {
+    border-color: #ff9800!important
+}
+
+.daw-border-deep-orange,.daw-hover-border-deep-orange:hover {
+    border-color: #ff5722!important
+}
+
+.daw-border-pink,.daw-hover-border-pink:hover {
+    border-color: #e91e63!important
+}
+
+.daw-border-purple,.daw-hover-border-purple:hover {
+    border-color: #9c27b0!important
+}
+
+.daw-border-deep-purple,.daw-hover-border-deep-purple:hover {
+    border-color: #673ab7!important
+}
+
+.daw-border-red,.daw-hover-border-red:hover {
+    border-color: #f44336!important
+}
+
+.daw-border-sand,.daw-hover-border-sand:hover {
+    border-color: #fdf5e6!important
+}
+
+.daw-border-teal,.daw-hover-border-teal:hover {
+    border-color: #009688!important
+}
+
+.daw-border-yellow,.daw-hover-border-yellow:hover {
+    border-color: #ffeb3b!important
+}
+
+.daw-border-white,.daw-hover-border-white:hover {
+    border-color: #fff!important
+}
+
+.daw-border-black,.daw-hover-border-black:hover {
+    border-color: #000!important
+}
+
+.daw-border-grey,.daw-hover-border-grey:hover,.daw-border-gray,.daw-hover-border-gray:hover {
+    border-color: #9e9e9e!important
+}
+
+.daw-border-light-grey,.daw-hover-border-light-grey:hover,.daw-border-light-gray,.daw-hover-border-light-gray:hover {
+    border-color: #f1f1f1!important
+}
+
+.daw-border-dark-grey,.daw-hover-border-dark-grey:hover,.daw-border-dark-gray,.daw-hover-border-dark-gray:hover {
+    border-color: #616161!important
+}
+
+.daw-border-pale-red,.daw-hover-border-pale-red:hover {
+    border-color: #ffe7e7!important
+}
+
+.daw-border-pale-green,.daw-hover-border-pale-green:hover {
+    border-color: #e7ffe7!important
+}
+
+.daw-border-pale-yellow,.daw-hover-border-pale-yellow:hover {
+    border-color: #ffffcc!important
+}
+
+.daw-border-pale-blue,.daw-hover-border-pale-blue:hover {
+    border-color: #e7ffff!important
+}
