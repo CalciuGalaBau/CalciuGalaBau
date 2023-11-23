@@ -883,8 +883,12 @@ a {
 }
 
 @media only screen and (max-width: 600px) {
-    ..daw-bar .daw-bar-item {
-        max-height: 50px !important; /* Adjust the max-height for smaller screens */
+    .daw-bar .daw-bar-item img {
+        max-height: 78px !important; /* Adjust the max-height as needed */
+    }
+
+    .daw-bar-item img {
+        max-height: 78px !important; /* Adjust the max-height as needed */
     }
 }
 
