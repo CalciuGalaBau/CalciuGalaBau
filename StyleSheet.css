@@ -883,6 +883,9 @@ a {
 }
 
 @media only screen and (max-width: 600px) {
+    .daw-bar {
+        position: static !important; /* Set position to static */
+    }
     .daw-bar .daw-bar-item img {
         max-height: 78px !important; /* Adjust the max-height as needed */
     }
@@ -1801,4 +1804,9 @@ a {
 
 .daw-border-pale-blue,.daw-hover-border-pale-blue:hover {
     border-color: #e7ffff!important
+}
+.corner img {
+    
+    height: 25px;
+    width: auto;
 }
