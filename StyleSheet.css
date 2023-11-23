@@ -642,6 +642,8 @@ a {
     width: 99.99999%
 }
 
+
+
 @media (min-width: 601px) {
     .daw-col.m1 {
         width:8.33333%
@@ -877,6 +879,12 @@ a {
 
     .daw-auto {
         max-width: 100%
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    ..daw-bar .daw-bar-item {
+        max-height: 50px !important; /* Adjust the max-height for smaller screens */
     }
 }
 
