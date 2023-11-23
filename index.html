@@ -9,14 +9,66 @@
 <link rel="icon" href="favicon.png" type="image/x-icon">
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="script.js"></script>
+<style>
+  .daw-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+      background-color: white;
+      position: sticky;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+  }
+
+  .daw-bar-item img {
+      max-height: max-content; /* Adjust the max-height as needed */
+  }
+
+  .daw-left,
+  .daw-right {
+      display: flex;
+      align-items: center;
+  }
+
+  .daw-right a {
+      margin-left: 10px;
+  }
+
+  @media only screen and (max-width: 600px) {
+      .daw-right {
+          display: none;
+      }
+  }
+</style>
 </head>
 <body style="background-color: #ffffff;">
 
-<!-- Navbar (sit on top) -->
+  <div class="daw-bar daw-white daw-wide daw-card">
+    <div class="daw-left daw-hide-small">
+        <p>here</p><!-- Add content for the left object here when implemented -->
+    </div>
+
+    <a href="#home" class="daw-bar-item daw-image">
+        <img src="nav.png" alt="Logo">
+    </a>
+
+    <div class="daw-right daw-hide-small">
+        <p>here</p><!-- Add content for the right object here when implemented -->
+    </div>
+</div>
+
+
+<!-- Navbar (sit on top) 
 <div style="position: sticky;" class="daw-top">
   <div class="daw-bar daw-white daw-wide daw-padding daw-card">
-    <a href="#home" class="daw-bar-item daw-image"><img src="nav.png"></a>
-    <!-- Float links to the right. Hide them on small screens -->
+    <div class="daw-left daw daw-hide-small">  New div for left content -->
+      <!-- Add content for the left object here when implemented 
+    </div>
+
+    <a href="#home" class="daw-bar-item daw-image" style="display: inline-block; text-align: center;"><img src="nav.png"></a>
+     Float links to the right. Hide them on small screens 
     <div class="daw-right daw-hide-small">
       <a href="https://www.instagram.com/dustin._.aw/?next=%2F" class="daw-bar-item" target="_blank"><img src="insta.png"></a>
       <a href="https://de-de.facebook.com/" class="daw-bar-item" target="_blank"><img src="facebook.png"></a>
@@ -24,7 +76,7 @@
       <link rel="icon" href="thumbnail_Grün_SMALL.png">
     </div>
   </div>
-</div>
+</div>-->
 
 <!-- Header -->
 <header class="daw-display-container daw-content daw-wide" style="max-width:1500px;" id="home">
