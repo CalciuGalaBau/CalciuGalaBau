@@ -51,7 +51,28 @@
 
 <!-- Header -->
 <header class="daw-display-container daw-content daw-wide" style="max-width:1500px;" id="home">
-  <img class="daw-image" src="sd (1).jpg" alt="small tree" width="1500" height="800">
+  <!-- Slideshow Container -->
+  <!-- Add these buttons in your HTML -->
+  <button id="prevButton" class="slide-button-left button-33" onclick="changeHeaderSlide(-1)">Previous</button>
+  <button id="centerButton" class="slide-button" onclick="changeHeaderSlide(0)">Next</button>
+  <button id="nextButton" class="slide-button-right button-33 " onclick="changeHeaderSlide(1)">Next</button>
+  
+  <div class="header-slideshow-container">
+    <div class="header-slide face">
+      <img class="header-image" style="display: block;" src="Garden_Background.jpg" alt="Slide 1">
+    </div>
+    <div class="header-slide fade">
+      <img class="header-image" src="Japanese-Gardens-USA.jpg" alt="Slide 2">
+    </div>
+    <div class="header-slide fade">
+      <img class="header-image" src="A_small_Garden_091824.jpg" alt="Slide 2">
+    </div>
+    <!-- Add more slides as needed -->
+  </div>
+
+  <!-- JavaScript for Slideshow -->
+  <script src="script.js"></script>
+
   <div class="daw-display-middle daw-margin-top daw-center">
     <h1 class="daw-xxlarge daw-text-white"><span class="daw-padding daw-black daw-opacity-min"><b>Dennis</b></span> <span class="daw-hide-small daw-text-light-grey">Geschäft</span></h1>
   </div>
@@ -95,7 +116,7 @@
       <div class="card card-container" id="cardContainer1">
         <div class="card-inner">
           <div class="card-front">
-            <div class="daw-display-topleft daw-black daw-padding">Gartenscheiß</div>
+            <div class="daw-display-topleft daw-black daw-padding">Gartenarbeit</div>
             <img src="thumbnail_GPTempDownload.jpg" alt="House" style="width:100%">
           </div>
           <div class="card-back">
@@ -109,7 +130,7 @@
       <div class="card card-container" id="cardContainer2">
         <div class="card-inner">
           <div class="card-front">
-            <div class="daw-display-topleft daw-black daw-padding">Brick House</div>
+            <div class="daw-display-topleft daw-black daw-padding">Gartenarbeit</div>
             <img src="A_small_Garden_091824.jpg" alt="House" style="width:100%">
           </div>
           <div class="card-back">
@@ -123,7 +144,7 @@
       <div class="card card-container" id="cardContainer2">
         <div class="card-inner">
           <div class="card-front">
-            <div class="daw-display-topleft daw-black daw-padding">Brick House</div>
+            <div class="daw-display-topleft daw-black daw-padding">Gartenarbeit</div>
             <img src="A_small_Garden_091824.jpg" alt="House" style="width:100%">
           </div>
           <div class="card-back">
@@ -142,7 +163,19 @@
         <div class="new-text-overlay">
           <div class="new-text" >Im Garten gibt es das ganze Jahr etwas zu tun. Wir kümmern uns um die Rasen- und Beetpflege, und natürlich auch um den jährlichen, fachgerechten Hecken- und Gehölzschnitt. Wir kümmern uns um Ihren Garten wie Sie es sich wünschen und es Ihnen am besten passt: von der einmaligen Grundpflege bis zur Dauerpflege – bei der wir beispielsweise alle zwei Wochen kommen und uns um Ihren Garten kümmern. Sie möchten Ihren Garten in vollen Zügen genießen, ohne die ganze Arbeit? Wir übernehmen für Sie – rufen Sie uns an und lassen sich beraten, was für Sie und Ihren Garten am besten passt.</div>
         </div>
-        <div class="daw-display-bottommiddle daw-black daw-padding" style="font-size: large;">Brick House</div>
+        <div class="daw-display-bottommiddle daw-black daw-padding" style="font-size: large;">Gartenarbeit</div>
+        <img src="thumbnail_GPTempDownload.jpg" alt="House" class="new-image"     style="border: #2da933;border-style: solid;">
+          </div>
+      </div>
+    </div>
+  
+    <div class="daw-col l4 m6">
+      <div class="card">
+          <div style="position: absolute;">
+        <div class="new-text-overlay">
+          <div class="new-text">Text den du lesen möchtest</div>
+        </div>
+        <div class="daw-display-bottommiddle daw-black daw-padding" style="font-size: large;">Gartenarbeit</div>
         <img src="A_small_Garden_091824.jpg" alt="House" class="new-image"     style="border: #2da933;border-style: solid;">
           </div>
       </div>
@@ -154,19 +187,7 @@
         <div class="new-text-overlay">
           <div class="new-text">Text den du lesen möchtest</div>
         </div>
-        <div class="daw-display-bottommiddle daw-black daw-padding" style="font-size: large;">Brick House</div>
-        <img src="A_small_Garden_091824.jpg" alt="House" class="new-image"     style="border: #2da933;border-style: solid;">
-          </div>
-      </div>
-    </div>
-  
-    <div class="daw-col l4 m6">
-      <div class="card">
-          <div style="position: absolute;">
-        <div class="new-text-overlay">
-          <div class="new-text">Text den du lesen möchtest</div>
-        </div>
-        <div class="daw-display-bottommiddle daw-black daw-padding" style="font-size: large;">Brick House</div>
+        <div class="daw-display-bottommiddle daw-black daw-padding" style="font-size: large;">Gartenarbeit</div>
         <img src="A_small_Garden_091824.jpg" alt="House" class="new-image"     style="border: #2da933;border-style: solid;">
           </div>
       </div>
@@ -178,8 +199,8 @@
       <div class="new-text-overlay">
         <div class="new-text">Im Garten gibt es das ganze Jahr etwas zu tun. Wir kümmern uns um die Rasen- und Beetpflege, und natürlich auch um den jährlichen, fachgerechten Hecken- und Gehölzschnitt. Wir kümmern uns um Ihren Garten wie Sie es sich wünschen und es Ihnen am besten passt: von der einmaligen Grundpflege bis zur Dauerpflege – bei der wir beispielsweise alle zwei Wochen kommen und uns um Ihren Garten kümmern. Sie möchten Ihren Garten in vollen Zügen genießen, ohne die ganze Arbeit? Wir übernehmen für Sie – rufen Sie uns an und lassen sich beraten, was für Sie und Ihren Garten am besten passt.</div>
       </div>
-      <div class="daw-display-bottommiddle daw-black daw-padding" style="font-size: large; border: #2da933;border-style: solid; border-width: 10%;" style="border: #2da933;border-style: solid; border-width: 10%;">Brick House</div>
-      <img src="A_small_Garden_091824.jpg" alt="House" class="new-image">
+      <div class="daw-display-bottommiddle daw-black daw-padding" style="font-size: large; border: #2da933;border-style: solid; border-width: 10%;" style="border: #2da933;border-style: solid; border-width: 10%;">Gartenarbeit</div>
+      <img src="thumbnail_GPTempDownload.jpg" alt="House" class="new-image">
       </div>  
     </div>
   </div>
@@ -190,7 +211,7 @@
       <div class="new-text-overlay">
         <div class="new-text">Text den du lesen möchtest</div>
       </div>
-      <div class="daw-display-bottommiddle daw-black daw-padding" style="font-size: large; border: #2da933;border-style: solid; border-width: 10%;" style="border: #2da933;border-style: solid; border-width: 10%;">Brick House</div>
+      <div class="daw-display-bottommiddle daw-black daw-padding" style="font-size: large; border: #2da933;border-style: solid; border-width: 10%;" style="border: #2da933;border-style: solid; border-width: 10%;">Gartenarbeit</div>
       <img src="A_small_Garden_091824.jpg" alt="House" class="new-image">
       </div>  
     </div>
@@ -203,7 +224,7 @@
     <div class="new-text-overlay">
       <div class="new-text">Text den du lesen möchtest</div>
     </div>
-    <div class="daw-display-bottommiddle daw-black daw-padding" style="font-size: large; border: #2da933;border-style: solid; border-width: 10%;" style="border: #2da933;border-style: solid; border-width: 10%;">Brick House</div>
+    <div class="daw-display-bottommiddle daw-black daw-padding" style="font-size: large; border: #2da933;border-style: solid; border-width: 10%;" style="border: #2da933;border-style: solid; border-width: 10%;">Gartenarbeit</div>
     <img src="A_small_Garden_091824.jpg" alt="House" class="new-image">
     </div>  
   </div>
@@ -218,8 +239,8 @@
       <div class="new-text-overlay">
         <div class="new-text" >Im Garten gibt es das ganze Jahr etwas zu tun. Wir kümmern uns um die Rasen- und Beetpflege, und natürlich auch um den jährlichen, fachgerechten Hecken- und Gehölzschnitt. Wir kümmern uns um Ihren Garten wie Sie es sich wünschen und es Ihnen am besten passt: von der einmaligen Grundpflege bis zur Dauerpflege – bei der wir beispielsweise alle zwei Wochen kommen und uns um Ihren Garten kümmern. Sie möchten Ihren Garten in vollen Zügen genießen, ohne die ganze Arbeit? Wir übernehmen für Sie – rufen Sie uns an und lassen sich beraten, was für Sie und Ihren Garten am besten passt.</div>
       </div>
-      <div class="daw-display-bottommiddle daw-black daw-padding" style="font-size: large;">Brick House</div>
-      <img src="A_small_Garden_091824.jpg" alt="House" class="new-image"     style="border: #2da933;border-style: solid;">
+      <div class="daw-display-bottommiddle daw-black daw-padding" style="font-size: large;">Gartenarbeit</div>
+      <img src="thumbnail_GPTempDownload.jpg" alt="House" class="new-image"     style="border: #2da933;border-style: solid;">
         </div>
     </div>
   </div>
@@ -230,7 +251,7 @@
       <div class="new-text-overlay">
         <div class="new-text">Text den du lesen möchtest</div>
       </div>
-      <div class="daw-display-bottommiddle daw-black daw-padding" style="font-size: large;">Brick House</div>
+      <div class="daw-display-bottommiddle daw-black daw-padding" style="font-size: large;">Gartenarbeit</div>
       <img src="A_small_Garden_091824.jpg" alt="House" class="new-image"     style="border: #2da933;border-style: solid;">
         </div>
     </div>
