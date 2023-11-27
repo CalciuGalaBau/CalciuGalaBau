@@ -17,16 +17,22 @@
 
   <div class="daw-bar daw-white daw-wide daw-card">
     <div class="daw-left daw-hide-small daw-container">
-      <img src="location.png"> 
-      <p>here</p><!-- Add content for the left object here when implemented -->
-  </div>
-
-    <a href="#home" class="daw-bar-item daw-image ">
-        <img src="nav.png" alt="Logo">
+      <a href="https://www.google.de/maps/place/Oststeinbeker+Weg+77,+22117+Hamburg/@53.539633,10.1404701,17z/data=!3m1!4b1!4m6!3m5!1s0x47b18ce982654dd5:0xbe1faf84a6e4b459!8m2!3d53.5396298!4d10.143045!16s%2Fg%2F11c0pmfhkx?entry=ttu">
+        <img src="location.png" alt="Location">
+      </a>
+      <a href="https://www.google.de/maps/place/Oststeinbeker+Weg+77,+22117+Hamburg/@53.539633,10.1404701,17z/data=!3m1!4b1!4m6!3m5!1s0x47b18ce982654dd5:0xbe1faf84a6e4b459!8m2!3d53.5396298!4d10.143045!16s%2Fg%2F11c0pmfhkx?entry=ttu">
+        <p>Oststeinbeker Weg 77 <br> Hamburg 22117</p>
+      </a>
+    </div>
+  
+    <a href="#home" class="daw-bar-item daw-image">
+      <img src="nav.png" alt="Logo">
     </a>
-
-    <div class="daw-right daw-hide-small">
-      <a href="tel:+4901783771671" ><img src="call.png"> </a>
+  
+    <div class="daw-right daw-hide-small" style="    flex-direction: column;">
+      <p><a href="tel:+491724284050">+49.1724284050</a>       <img src="call.png" alt="Call"></p>
+      <p><a href="mailto:your@email.com">your@email.com</a><img src="a.png"></p>
+      </a>
     </div>
 </div>
 
@@ -53,10 +59,10 @@
 <header class="daw-display-container daw-content daw-wide" style="max-width:1500px;" id="home">
   <!-- Slideshow Container -->
   <!-- Add these buttons in your HTML -->
-  <button id="prevButton" class="slide-button-left button-33" onclick="changeHeaderSlide(-1)">Previous</button>
-  <button id="centerButton" class="slide-button" onclick="changeHeaderSlide(0)">Next</button>
-  <button id="nextButton" class="slide-button-right button-33 " onclick="changeHeaderSlide(1)">Next</button>
-  
+  <button id="prevButton" class="slide-button-left button-33 mobile" onclick="changeHeaderSlide(-1)">Previous</button>
+  <button id="nextButton" class="slide-button-right button-33 mobile" onclick="changeHeaderSlide(1)">Next</button>
+  <button id="prevButton" class="slide-button-left button-33 desktop" onclick="changeHeaderSlide(-1)">-</button>
+  <button id="nextButton" class="slide-button-right button-33 desktop" onclick="changeHeaderSlide(1)">-</button>
   <div class="header-slideshow-container">
     <div class="header-slide face">
       <img class="header-image" style="display: block;" src="Garden_Background.jpg" alt="Slide 1">
@@ -292,13 +298,21 @@
 
 
 <!-- Footer -->
-<footer class="daw-center daw-black daw-padding-16">
+<footer class="daw-center daw-black daw-padding-16" style="position: relative;">
   <p>Powered by Dustin</p>
-  <div class="corner">
-    <a href="https://www.instagram.com/dustin._.aw/?next=%2F" target="_blank"><img src="insta.png"></a>
-    <a href="https://de-de.facebook.com/"  target="_blank"><img src="facebook.png"></a>
-    <a href="tel:+4901783771671" ><img src="call.png"> </a>
-    <link rel="icon" href="thumbnail_Grün_SMALL.png">
+  <div class="daw-row-padding">
+    <div class="daw-col s5" style="text-align:left; left: 10%;">Dennis Calciu <br>
+      Calciu und Sohn Garten und Landschaftsbau<br>
+      Oststeinbeker Weg 77<br>
+      Hamburg ; Hamburg 22117<br>
+      DE tel: +49.1724284050<br>
+      Calciu.galabau@yahoo.com</div>
+    <div class="daw-col">
+      <a href="https://www.instagram.com/dustin._.aw/?next=%2F" target="_blank"><img src="insta.png"></a>
+      <a href="https://de-de.facebook.com/"  target="_blank"><img src="facebook.png"></a>
+      <a href="tel:+49.1724284050" ><img src="call.png"> </a>
+      <link rel="icon" href="thumbnail_Grün_SMALL.png">
+    </div>   
   </div>
 </footer>
 
