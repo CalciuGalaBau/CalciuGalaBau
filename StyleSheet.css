@@ -133,7 +133,7 @@ body {
     align-items: center;
     justify-content: center;
     opacity: 0;
-    background-color: #2da933; /* Adjust the background color and opacity */
+    background-color: rgb(255, 255, 255); /* Adjust the background color and opacity */
     transition: opacity 0.5s;
   }
 
@@ -142,7 +142,7 @@ body {
   }
 
   .new-text {
-    color: white;
+    color: rgb(0, 0, 0);
     font-size: 100%; /* this is for the problem uf fucking bewing shitty. In all frucking regards mate*/
     text-align: center;
     box-sizing: border-box;
@@ -194,6 +194,7 @@ body {
     height: 100%;
     position: absolute;
     backface-visibility: hidden;
+    background-color: #2da933;
   }
 
   .card-back {
