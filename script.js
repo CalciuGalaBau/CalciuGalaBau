@@ -34,7 +34,7 @@ function startAutomaticSlide() {
   headerSlideInterval = setInterval(function () {
     console.log("Automatic slideshow triggered.");
     changeHeaderSlide(1);
-  }, 10000); // Change slide every 2 seconds (adjust as needed, the three last 000 should stay, everything before that says the seconds.)
+  }, 7000); // Change slide every 2 seconds (adjust as needed, the three last 000 should stay, everything before that says the seconds.)
 }
 
 // Start automatic slideshow
