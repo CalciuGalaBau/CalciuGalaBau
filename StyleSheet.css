@@ -298,7 +298,11 @@ abbr[title] {
 }
 .under{
     text-decoration: underline;
-    text-decoration: #009688;
+    text-decoration-color: #ffffff;
+}
+.underb{
+    text-decoration: underline;
+    text-decoration-color: #000000;
 }
 b,strong {
     font-weight: bolder
@@ -424,7 +428,7 @@ textarea {
 /* End extract */
 html,body {
     font-family: Verdana,sans-serif;
-    font-size: 15px;
+    font-size: calc(15px + 0.390625vw);
     line-height: 1.5
 }
 
@@ -449,11 +453,11 @@ h4 {
 }
 
 h5 {
-    font-size: 18px
+    font-size: calc(16px + 0.390625vw);
 }
 
 h6 {
-    font-size: 16px
+    font-size: calc(16px + 0.390625vw);
 }
 
 .daw-serif {
@@ -854,6 +858,9 @@ a {
 
 
 @media (min-width: 601px) {
+
+
+
     .daw-col.m1 {
         width:8.33333%
     }
@@ -904,6 +911,7 @@ a {
 }
 
 @media (min-width: 993px) {
+
 
     .daw-show-small
 {
@@ -1016,6 +1024,13 @@ a {
     .daw-auto {
         max-width:95%
     }
+    .daw-xlarge{
+        font-size: calc(18px + 0.390625vw)!important
+    }
+    .daw-large{
+        font-size: calc(16px + 0.390625vw)!important
+    }
+
 }
 
 @media (max-width: 600px) {
@@ -1051,6 +1066,7 @@ a {
     .daw-dropdown-hover.daw-mobile,.daw-dropdown-hover.daw-mobile .daw-btn,.daw-dropdown-hover.daw-mobile .daw-button,.daw-dropdown-click.daw-mobile,.daw-dropdown-click.daw-mobile .daw-btn,.daw-dropdown-click.daw-mobile .daw-button {
         width: 100%
     }
+
 }
 
 @media (max-width: 768px) {
@@ -1491,23 +1507,23 @@ a {
 }
 
 .daw-small {
-    font-size: 12px!important
+    font-size: calc(12px + 0.390625vw)!important
 }
 
 .daw-medium {
-    font-size: 15px!important
+    font-size: calc(15px + 0.390625vw)
 }
 
 .daw-large {
-    font-size: 18px!important
+    font-size: calc(18px + 0.390625vw)
 }
 
 .daw-xlarge {
-    font-size: 24px!important
+    font-size: calc(24px + 0.390625vw)
 }
 
 .daw-xxlarge {
-    font-size: 36px!important
+    font-size: calc(36px + 0.390625vw)!important
 }
 
 .daw-xxxlarge {
