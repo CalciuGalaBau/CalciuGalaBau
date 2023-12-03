@@ -296,7 +296,10 @@ abbr[title] {
     text-decoration: underline;
     text-decoration: underline dotted
 }
-
+.under{
+    text-decoration: underline;
+    text-decoration: #009688;
+}
 b,strong {
     font-weight: bolder
 }
